@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     HeaderComponent,
+    HomePageComponent,
     SearchBoxComponent,
-    HomePageComponent
   ],
   imports: [
     CommonModule,

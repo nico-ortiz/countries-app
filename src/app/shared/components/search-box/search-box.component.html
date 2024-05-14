@@ -1,1 +1,7 @@
-<p>search-box works!</p>
+<input
+  class="form-control"
+  placeholder="Search for a country..."
+  type="text"
+  (keyup.enter)="sendCountry(txtInput.value)"
+  #txtInput
+>
