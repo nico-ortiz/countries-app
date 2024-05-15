@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CountriesService } from '../../../countries/services/countries.service';
+import { Country } from '../../../countries/interfaces/Country';
 
 @Component({
   selector: 'shared-home-page',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HomePageComponent {
 
+  constructor(private countriesService: CountriesService) {}
+
+  public countries: Country[] = [];
+
+  searchByCountry(country: string):void {
+    this.countriesService
+      .searchByCountry(country)
+      .subscribe(countries => {this.countries = countries});
+  }
 }

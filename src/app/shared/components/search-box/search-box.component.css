@@ -1,0 +1,11 @@
+.form-control {
+  padding: 15px 70px 15px 0px;
+  width: 25%;
+  border:  none;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0 , 0, 0.3);
+  border-radius: 2px;
+
+  padding-left: 70px;
+  background: url(../../../../assets/images/icons8-búsqueda-30.png) no-repeat 20px 13px;
+  background-size: 20px;
+}

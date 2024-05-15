@@ -1,4 +1,5 @@
 <shared-header></shared-header>
 <div class="search-container">
-  <shared-search-box></shared-search-box>
+  <shared-search-box (onValue)="searchByCountry($event)"></shared-search-box>
 </div>
+<countries-card [countries]="countries"></countries-card>

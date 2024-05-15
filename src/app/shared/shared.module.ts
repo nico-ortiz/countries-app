@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouterModule } from '@angular/router';
+import { CountriesModule } from '../countries/countries.module';
 
 
 
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
+    CountriesModule
   ],
   exports: [
     HeaderComponent,
