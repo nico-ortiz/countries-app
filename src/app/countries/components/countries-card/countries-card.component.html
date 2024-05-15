@@ -1,11 +1,29 @@
 <div class="cards-container">
-  <article class="country-card" *ngFor="let country of countries">
-    <img class="country-flag" [src]="country.flags.svg" [alt]="country.name.common">
-    <div class="info-container">
-      <h3 class="country-name">{{country.name.common}}</h3>
-      <p class="country-info">{{country.population}}</p>
-      <p class="country-info">{{country.region}}</p>
-      <p class="country-info">{{country.capital}}</p>
-    </div>
-  </article>
+  <div *ngIf="countries.length === 0; else cards" class="alert">
+    No hay paises que mostrar
+  </div>
+  <ng-template #cards>
+    <ng-container class="cards-container"
+      *ngFor="let country of countries | slice:0:count;
+      let i = index"
+    >
+      <article
+        class="country-card"
+        *ngIf="i < countries.length && i < this.count"
+      >
+        <img class="country-flag" [src]="country.flags.svg" [alt]="country.name.common">
+        <div class="info-container">
+          <h3 class="country-name">{{country.name.common}}</h3>
+          <p class="country-info">{{country.population}}</p>
+          <p class="country-info">{{country.region}}</p>
+          <p class="country-info">{{country.capital}}</p>
+        </div>
+      </article>
+    </ng-container>
+  </ng-template>
 </div>
+<button
+  class="show-more-btn nunito-sans-600"
+  (click)="count = this.limit + this.count"
+  *ngIf="countries.length > this.count"
+>Show more</button>

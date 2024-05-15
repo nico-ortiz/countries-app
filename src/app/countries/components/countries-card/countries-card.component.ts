@@ -9,4 +9,7 @@ import { Country } from '../../interfaces/Country';
 export class CountriesCardComponent {
   @Input()
   public countries: Country[] = [];
+
+  public count: number = 8;
+  public limit: number = this.count;
 }
