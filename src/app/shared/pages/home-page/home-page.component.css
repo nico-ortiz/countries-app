@@ -1,3 +1,7 @@
 .search-container {
-  margin: 50px;
+  margin: 50px 150px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

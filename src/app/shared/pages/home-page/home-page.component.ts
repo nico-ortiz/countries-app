@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CountriesService } from '../../../countries/services/countries.service';
-import { Country } from '../../../countries/interfaces/Country';
+import { Country } from '../../../countries/interfaces/country';
+import { Region } from '../../../countries/interfaces/region.type';
 
 @Component({
   selector: 'shared-home-page',
@@ -16,6 +17,12 @@ export class HomePageComponent {
   searchByCountry(country: string):void {
     this.countriesService
       .searchByCountry(country)
+      .subscribe(countries => {this.countries = countries});
+  }
+
+  searchByRegion(region: Region) {
+    this.countriesService
+      .searchByRegion(region)
       .subscribe(countries => {this.countries = countries});
   }
 }

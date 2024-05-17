@@ -1,5 +1,5 @@
 <div class="cards-container">
-  <div *ngIf="countries.length === 0; else cards" class="alert">
+  <div *ngIf="countries.length === 0; else cards" class="alert nunito-sans-600">
     No hay paises que mostrar
   </div>
   <ng-template #cards>
@@ -26,4 +26,4 @@
   class="show-more-btn nunito-sans-600"
   (click)="count = this.limit + this.count"
   *ngIf="countries.length > this.count"
->Show more</button>
+>View more</button>

@@ -5,6 +5,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RouterModule } from '@angular/router';
 import { CountriesModule } from '../countries/countries.module';
+import { FilterComponent } from '../countries/components/filter/filter.component';
 
 
 
@@ -12,6 +13,7 @@ import { CountriesModule } from '../countries/countries.module';
   declarations: [
     HeaderComponent,
     HomePageComponent,
+    FilterComponent,
     SearchBoxComponent,
   ],
   imports: [

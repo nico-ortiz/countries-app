@@ -1,0 +1,12 @@
+<select
+  #selectedRegions
+  id="region-select"
+  class="nunito-sans-600"
+  (change)="sendRegion($event)">
+  <option class="options" value=""hidden>Filter by Region</option>
+  <option
+    class="options"
+    *ngFor="let region of regions"
+    [value]="region"
+    >{{region}}</option>
+</select>
