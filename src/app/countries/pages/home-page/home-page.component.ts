@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CountriesService } from '../../../countries/services/countries.service';
-import { Country } from '../../../countries/interfaces/country';
-import { Region } from '../../../countries/interfaces/region.type';
+import { CountriesService } from '../../services/countries.service';
+import { Country } from '../../interfaces/country';
+import { Region } from '../../interfaces/region.type';
 
 @Component({
   selector: 'shared-home-page',

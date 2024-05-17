@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="search-container">
+    <shared-search-box (onValue)="searchByCountry($event)"></shared-search-box>
+    <shared-filter (onRegion)="searchByRegion($event)"></shared-filter>
+  </div>
+  <countries-card [countries]="countries"></countries-card>
+</div>

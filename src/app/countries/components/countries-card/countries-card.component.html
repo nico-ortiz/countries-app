@@ -13,10 +13,10 @@
       >
         <img class="country-flag" [src]="country.flags.svg" [alt]="country.name.common">
         <div class="info-container">
-          <h3 class="country-name">{{country.name.common}}</h3>
-          <p class="country-info">{{country.population}}</p>
-          <p class="country-info">{{country.region}}</p>
-          <p class="country-info">{{country.capital}}</p>
+          <h3 class="country-name nunito-sans-800">{{country.name.common}}</h3>
+          <p class="country-info nunito-sans-600"><strong>Population: </strong><span class="nunito-sans-300">{{country.population | number}}</span></p>
+          <p class="country-info nunito-sans-600"><strong>Region: </strong><span class="nunito-sans-300">{{country.region}}</span></p>
+          <p class="country-info nunito-sans-600"><strong>Capital: </strong><span class="nunito-sans-300">{{country.capital}}</span></p>
         </div>
       </article>
     </ng-container>
