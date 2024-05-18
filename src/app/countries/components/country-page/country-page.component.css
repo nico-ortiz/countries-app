@@ -1,0 +1,18 @@
+.country-page-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 100px 150px;
+}
+
+.back-btn {
+  margin: 100px auto;
+  padding: 20px 100px;
+  font-size: 16px;
+  border: none;
+  box-shadow:  1px 1px 5px 1px rgba(0, 0 , 0, 0.3);
+  border-radius: 5px;
+  background-color: white;
+  background: url(../../../../assets/images/icons8-flecha-izquierda-larga-60.png) no-repeat 60px 17px;
+  background-size: 30px;
+  cursor: pointer;
+}

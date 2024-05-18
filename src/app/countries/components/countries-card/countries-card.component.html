@@ -7,6 +7,7 @@
       *ngFor="let country of countries | slice:0:count;
       let i = index"
     >
+    <a class="a-link-country" [routerLink]="['/countries/by', country.cca3]">
       <article
         class="country-card"
         *ngIf="i < countries.length && i < this.count"
@@ -19,6 +20,7 @@
           <p class="country-info nunito-sans-600"><strong>Capital: </strong><span class="nunito-sans-300">{{country.capital}}</span></p>
         </div>
       </article>
+    </a>
     </ng-container>
   </ng-template>
 </div>

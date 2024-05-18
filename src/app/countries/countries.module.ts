@@ -5,14 +5,16 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { FilterComponent } from './components/filter/filter.component';
 import { CountriesRoutingModule } from './countries-routing.module';
+import { CountryPageComponent } from './components/country-page/country-page.component';
 
 
 
 @NgModule({
   declarations: [
     CountriesCardComponent,
+    CountryPageComponent,
     FilterComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     CommonModule,
