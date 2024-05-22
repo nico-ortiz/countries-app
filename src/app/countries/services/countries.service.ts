@@ -37,4 +37,9 @@ export class CountriesService {
         catchError(error => of(null))
       );
   }
+
+  searchCountriesByCodes(countriesCodes: string[]): Observable<Country[]> {
+    const url: string = `${this.url}/alpha?codes=${countriesCodes.join(',')}`;
+    return this.http.get<Country[]>(url);
+  }
 }

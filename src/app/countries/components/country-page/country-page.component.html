@@ -4,7 +4,8 @@
   </div>
 </ng-template>
 
-<div *ngIf="country; else loading" class="country-page-container">
+<div *ngIf="country; else loading" class="country-page-container"
+  [ngClass]="{'dark-class': isComponentDark === 'dark'}">
   <button
     class="back-btn nunito-sans-600"
     [routerLink]="'/search'"
@@ -15,7 +16,7 @@
         <h1 class="country-name">{{country.name.common}}</h1>
         <div class="country-details">
           <div class="first-details">
-            <p>Native Name: <span>{{country.name.nativeName}}</span></p>
+            <p>Native Name: <span>{{country.name.official}}</span></p>
             <p>Population: <span>{{country.population | number}}</span></p>
             <p>Region: <span>{{country.region}}</span></p>
             <p>Sub Region: <span>{{country.subregion}}</span></p>
@@ -23,10 +24,10 @@
           </div>
           <div class="second-details">
             <p>Top Level Domain: <span>{{country.tld}}</span></p>
-            <p>Currencies: <span>{{country.currencies}}</span></p>
+            <p>Currencies: <span>{{getCurrencyName(country)}}</span></p>
             <p>Languages: <span>{{objectKeys(country.languages || {})}}</span></p>
           </div>
-          <p>Border Countries: <span>{{borderCountries(country.borders || [])}}</span></p>
+          <p class="border-countries">Border countries: <span>{{borderCountries(country)}}</span></p>
         </div>
     </figcaption>
   </figure>

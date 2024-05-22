@@ -4,6 +4,16 @@
   padding: 100px 150px;
 }
 
+.dark-class {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+}
+
+.dark-class .back-btn {
+  background-color: hsl(207, 26%, 17%);
+  color: white;
+}
+
 .back-btn {
   margin: 100px auto;
   padding: 20px 100px;
@@ -18,13 +28,13 @@
 }
 
 .info-country {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
 }
 
 .info-country .flag-country {
-  width: 90%;
-  height: 70%;
+  width: 40%;
+  height: 40%;
   object-fit: cover;
 }
 
@@ -41,8 +51,24 @@ figcaption > .country-name {
 
 figcaption > .country-details {
   font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-template-areas:
+    "one two"
+    "three three";
+}
+
+figcaption > .country-details .first-details {
+  grid-area: one;
+}
+
+figcaption > .country-details .second-details {
+  grid-area: two;
+}
+
+figcaption > .country-details .border-countries {
+  grid-area: three;
+  margin-top: 20px;
 }
 
 figcaption > .country-details > .first-details > p,

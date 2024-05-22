@@ -1,7 +1,9 @@
 <header
   [ngClass]="{'dark-class': isComponentDark === 'dark'}"
 >
-  <h1 class="title nunito-sans-800"><a href="#">Where in the world</a></h1>
+  <h1
+    class="title nunito-sans-800"
+    [routerLink]="'./search'">Where in the world</h1>
   <div
     class="dark-theme-container nunito-sans-600"
     (click)="swtichTheme()">

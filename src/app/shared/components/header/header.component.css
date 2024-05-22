@@ -12,9 +12,8 @@ header {
   background-color: white;
 }
 
-header > .title > a {
-  text-decoration: none;
-  color: black;
+header > .title {
+  cursor: pointer;
 }
 
 .dark-theme-container {
@@ -33,7 +32,7 @@ header > .title > a {
   background: hsl(209, 23%, 22%);
 }
 
-.dark-class .title > a,
+.dark-class .title,
 .dark-class .dark-theme-container {
   color: white;
 }
