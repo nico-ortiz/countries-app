@@ -4,10 +4,19 @@
   max-width: 100%;
   border:  none;
   box-shadow: 1px 1px 5px 1px rgba(0, 0 , 0, 0.3);
-  border-radius: 2px;
+  border-radius: 5px;
 
   padding-left: 70px;
   background: url(../../../../assets/images/icons8-búsqueda-30.png) no-repeat 20px 15px;
   background-size: 20px;
   font-size: 16px;
+}
+
+.dark-class {
+  background-color:  hsl(209, 23%, 22%);
+  color: white;
+}
+
+.dark-class::placeholder {
+  color: white;
 }

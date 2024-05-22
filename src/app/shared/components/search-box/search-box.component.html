@@ -4,4 +4,5 @@
   type="text"
   (keyup.enter)="sendCountry(txtInput.value)"
   #txtInput
+  [ngClass]="{'dark-class': isComponentDark === 'dark'}"
 >

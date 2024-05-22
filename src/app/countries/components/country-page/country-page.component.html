@@ -1,21 +1,32 @@
-<div class="country-page-container">
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor
+  </div>
+</ng-template>
+
+<div *ngIf="country; else loading" class="country-page-container">
   <button
     class="back-btn nunito-sans-600"
     [routerLink]="'/search'"
   >Back</button>
   <figure class="info-country">
-    <img [src]="country?.flags?.svg" [alt]="country?.name">
-    <figcaption>
-        <h3 class="country-name">{{country?.name?.common}}</h3>
-        <div class="counttry-details">
-          <p>Native Name: <span>{{country?.name?.nativeName?.spa?.official}}</span></p>
-          <p>Population: <span>{{country?.population | number}}</span></p>
-          <p>Region: <span>{{country?.region}}</span></p>
-          <p>Sub Region: <span>{{country?.subregion}}</span></p>
-          <p>Capital: <span>{{country?.capital}}</span></p>
-          <p>Top Level Domain: <span>{{country?.tld}}</span></p>
-          <p>Currencies: <span>{{country?.currencies?.ARS}}</span></p>
-          <p>Languages: <span>{{country?.languages?.grn}}</span></p>
+    <img class="flag-country" [src]="country.flags.svg" [alt]="country.name">
+    <figcaption class="nunito-sans-800">
+        <h1 class="country-name">{{country.name.common}}</h1>
+        <div class="country-details">
+          <div class="first-details">
+            <p>Native Name: <span>{{country.name.nativeName}}</span></p>
+            <p>Population: <span>{{country.population | number}}</span></p>
+            <p>Region: <span>{{country.region}}</span></p>
+            <p>Sub Region: <span>{{country.subregion}}</span></p>
+            <p>Capital: <span>{{country.capital}}</span></p>
+          </div>
+          <div class="second-details">
+            <p>Top Level Domain: <span>{{country.tld}}</span></p>
+            <p>Currencies: <span>{{country.currencies}}</span></p>
+            <p>Languages: <span>{{objectKeys(country.languages || {})}}</span></p>
+          </div>
+          <p>Border Countries: <span>{{borderCountries(country.borders || [])}}</span></p>
         </div>
     </figcaption>
   </figure>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'shared-header',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  public isComponentDark!: string;
+
+  constructor(private sharedService: SharedService) {
+    sharedService.mode.subscribe(mode => this.isComponentDark = mode)
+  }
+
+  public swtichTheme():void {
+    this.sharedService.switchMode(this.isComponentDark === 'dark' ? 'light' : 'dark');
+  }
 }

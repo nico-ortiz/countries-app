@@ -12,6 +12,7 @@ import { switchMap } from 'rxjs';
 export class CountryPageComponent implements OnInit {
 
   public country?: Country;
+  private countryToSave?: Country;
 
   constructor(
     private countriesService: CountriesService,
@@ -30,5 +31,24 @@ export class CountryPageComponent implements OnInit {
         }
         return this.country = country;
       })
+  }
+
+  objectKeys(obj: {[key: string]: string}) {
+    return Object.values(obj);
+  }
+
+  borderCountries(obj: string[]) {
+    const countries: string[] = [];
+    obj.forEach(country => {
+      countries.push(this.getCountryByAlphaCode(country));
+    })
+  }
+
+  getCountryByAlphaCode(code: string): any {
+      this.countriesService.searchByAlphaCode(code).subscribe((countryObs) => {
+        if (!countryObs)
+          return ;
+        return this.countryToSave = countryObs;
+      });
   }
 }

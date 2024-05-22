@@ -1,7 +1,12 @@
-<header>
+<header
+  [ngClass]="{'dark-class': isComponentDark === 'dark'}"
+>
   <h1 class="title nunito-sans-800"><a href="#">Where in the world</a></h1>
-  <div class="dark-theme-container nunito-sans-600">
+  <div
+    class="dark-theme-container nunito-sans-600"
+    (click)="swtichTheme()">
     <img src="../../../../assets/images/icons8-do-not-disturb-ios-100.png" alt="moon">
+    <img class="moon-dark-theme" src="../../../../assets/images/icons8-do-not-disturb-ios-100light.png" alt="">
     <p class="">Dark Mode</p>
   </div>
 </header>

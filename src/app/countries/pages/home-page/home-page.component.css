@@ -1,7 +1,14 @@
 .container {
   padding-top: 95px;
-  background-color: hsl(0, 0%, 98%);
   height: 100vh;
+}
+
+.container.white-class {
+  background-color: hsl(0, 0%, 98%);
+}
+
+.container.dark-class {
+  background-color: hsl(207, 26%, 17%);
 }
 
 .search-container {
@@ -10,4 +17,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.dark-class {
+  background-color: hsl(207, 26%, 17%);
 }

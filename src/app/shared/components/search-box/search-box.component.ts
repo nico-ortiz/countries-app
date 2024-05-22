@@ -1,4 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'shared-search-box',
@@ -12,6 +13,12 @@ export class SearchBoxComponent {
 
   @Output()
   public onValue : EventEmitter<string> = new EventEmitter();
+
+  public isComponentDark!: string;
+
+  constructor(private sharedService: SharedService) {
+    sharedService.mode.subscribe(mode => this.isComponentDark = mode)
+  }
 
   public sendCountry(country: string): void {
     this.onValue.emit(country);

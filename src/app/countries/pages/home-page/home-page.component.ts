@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CountriesService } from '../../services/countries.service';
 import { Country } from '../../interfaces/country';
 import { Region } from '../../interfaces/region.type';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'shared-home-page',
@@ -10,9 +11,15 @@ import { Region } from '../../interfaces/region.type';
 })
 export class HomePageComponent {
 
-  constructor(private countriesService: CountriesService) {}
-
   public countries: Country[] = [];
+  public isComponentDark!: string;
+
+  constructor(
+    private countriesService: CountriesService,
+    private sharedService: SharedService
+  ) {
+    this.sharedService.mode.subscribe(mode => this.isComponentDark = mode);
+  }
 
   searchByCountry(country: string):void {
     this.countriesService

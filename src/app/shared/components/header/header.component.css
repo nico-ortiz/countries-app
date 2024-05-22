@@ -28,3 +28,16 @@ header > .title > a {
   width: 25px;
   margin-right: 10px;
 }
+
+.dark-class {
+  background: hsl(209, 23%, 22%);
+}
+
+.dark-class .title > a,
+.dark-class .dark-theme-container {
+  color: white;
+}
+
+.dark-class .moon-dark-theme {
+  display: none;
+}

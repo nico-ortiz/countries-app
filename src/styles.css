@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 .nunito-sans-300 {
   font-family: "Nunito Sans", sans-serif;
   font-optical-sizing: auto;

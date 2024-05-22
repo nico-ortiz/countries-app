@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Country } from '../../interfaces/country';
+import { SharedService } from '../../../shared/services/shared.service';
 
 @Component({
   selector: 'countries-card',
@@ -12,4 +13,9 @@ export class CountriesCardComponent {
 
   public count: number = 8;
   public limit: number = this.count;
+  public isComponentDark!: string;
+
+  constructor(private sharedService: SharedService) {
+    sharedService.mode.subscribe(mode => this.isComponentDark = mode)
+  }
 }

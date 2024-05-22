@@ -2,7 +2,8 @@
   #selectedRegions
   id="region-select"
   class="nunito-sans-600"
-  (change)="sendRegion($event)">
+  (change)="sendRegion($event)"
+  [ngClass]="{'dark-class': isComponentDark === 'dark'}">
   <option class="options" value=""hidden>Filter by Region</option>
   <option
     class="options"
