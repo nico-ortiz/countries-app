@@ -15,7 +15,7 @@
 .dark-class {
   background-color:  hsl(209, 23%, 22%);
   color: white;
-  background: url(../../../../assets/images/icons8-búsqueda-50.png) no-repeat 20px 15px;
+  background: url(../../../../assets/images/icons8-búsqueda-50.png) no-repeat 20px 15px transparent;
   background-size: 20px;
 }
 
