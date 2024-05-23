@@ -27,7 +27,7 @@
             <p>Currencies: <span>{{getCurrencyName(country)}}</span></p>
             <p>Languages: <span>{{objectKeys(country.languages || {})}}</span></p>
           </div>
-          <p class="border-countries">Border countries: <span>{{borderCountries(country)}}</span></p>
+          <p class="border-countries">Border countries: <span class="border-country" *ngFor="let borderCountry of bordersCountriesList"><a [routerLink]="['/countries/by', borderCountry.cca3]">{{borderCountry.name.common}}</a></span></p>
         </div>
     </figcaption>
   </figure>

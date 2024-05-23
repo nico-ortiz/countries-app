@@ -1,9 +1,6 @@
 .container {
   padding-top: 95px;
   height: 100vh;
-}
-
-.container.white-class {
   background-color: hsl(0, 0%, 98%);
 }
 

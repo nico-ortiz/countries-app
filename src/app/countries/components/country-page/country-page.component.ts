@@ -13,7 +13,7 @@ import { SharedService } from '../../../shared/services/shared.service';
 export class CountryPageComponent implements OnInit {
 
   public country?: Country;
-  public countries: Country[] = [];
+  public bordersCountriesList : Country[] = [];
   private countryToSave?: Country;
   public isComponentDark!: string;
 
@@ -35,7 +35,9 @@ export class CountryPageComponent implements OnInit {
         if (!country) {
           return this.router.navigateByUrl('');
         }
-        return this.country = country;
+        this.country = country;
+        this.borderCountries(this.country);
+        return ;
       })
   }
 
@@ -59,13 +61,9 @@ export class CountryPageComponent implements OnInit {
   borderCountries(country: Country): string[] {
     if (country.borders) {
       this.countriesService.searchCountriesByCodes(country.borders)
-        .subscribe(countries => this.countries = countries);
-
-      const bordersCountries: string[] = [];
-      this.countries.forEach((country) => {
-        bordersCountries.push(country.name.common)
-      });
-      return bordersCountries;
+        .subscribe(countries => {
+          this.bordersCountriesList = countries;
+        });
     }
     return [];
   }

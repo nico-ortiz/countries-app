@@ -25,9 +25,13 @@
     </ng-container>
   </ng-template>
 </div>
-<button
-  class="show-more-btn nunito-sans-600"
-  (click)="count = this.limit + this.count"
-  *ngIf="countries.length > this.count"
-  [ngClass]="{'dark-btn': isComponentDark === 'dark'}"
->View more</button>
+<div
+  class="btn-container"
+  [ngClass]="{'dark-btn': isComponentDark === 'dark'}">
+  <button
+    class="show-more-btn nunito-sans-600"
+    (click)="count = this.limit + this.count"
+    *ngIf="countries.length > this.count"
+    [ngClass]="{'dark-btn': isComponentDark === 'dark'}"
+  >View more</button>
+</div>
