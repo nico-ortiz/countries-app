@@ -1,0 +1,42 @@
+header {
+  padding: 25px 150px;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0 , 0, 0.3);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+}
+
+header > .title {
+  cursor: pointer;
+}
+
+.dark-theme-container {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+.dark-theme-container > img {
+  width: 25px;
+  margin-right: 10px;
+}
+
+.dark-class {
+  background: hsl(209, 23%, 22%);
+}
+
+.dark-class .title,
+.dark-class .dark-theme-container {
+  color: white;
+}
+
+.dark-class .moon-dark-theme {
+  display: none;
+}

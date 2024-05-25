@@ -1,0 +1,37 @@
+<div class="cards-container"
+  [ngClass]="{'dark-class': isComponentDark === 'dark'}">
+  <div *ngIf="countries.length === 0; else cards" class="alert nunito-sans-600">
+    No hay paises que mostrar
+  </div>
+  <ng-template #cards>
+    <ng-container class="cards-container"
+      *ngFor="let country of countries | slice:0:count;
+      let i = index"
+    >
+    <a class="a-link-country" [routerLink]="['/countries/by', country.cca3]">
+      <article
+        class="country-card"
+        *ngIf="i < countries.length && i < this.count"
+      >
+        <img class="country-flag" [src]="country.flags.svg" [alt]="country.name.common">
+        <div class="info-container">
+          <h3 class="country-name nunito-sans-800">{{country.name.common}}</h3>
+          <p class="country-info nunito-sans-600"><strong>Population: </strong><span class="nunito-sans-300">{{country.population | number}}</span></p>
+          <p class="country-info nunito-sans-600"><strong>Region: </strong><span class="nunito-sans-300">{{country.region}}</span></p>
+          <p class="country-info nunito-sans-600"><strong>Capital: </strong><span class="nunito-sans-300">{{country.capital}}</span></p>
+        </div>
+      </article>
+    </a>
+    </ng-container>
+  </ng-template>
+</div>
+<div
+  class="btn-container"
+  [ngClass]="{'dark-btn': isComponentDark === 'dark'}">
+  <button
+    class="show-more-btn nunito-sans-600"
+    (click)="count = this.limit + this.count"
+    *ngIf="countries.length > this.count"
+    [ngClass]="{'dark-btn': isComponentDark === 'dark'}"
+  >View more</button>
+</div>
