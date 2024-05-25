@@ -1,0 +1,21 @@
+.container {
+  padding-top: 95px;
+  height: 100vh;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.container.dark-class {
+  background-color: hsl(207, 26%, 17%);
+}
+
+.search-container {
+  margin: 50px 150px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark-class {
+  background-color: hsl(207, 26%, 17%);
+}
