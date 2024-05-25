@@ -3,6 +3,7 @@
   placeholder="Search for a country..."
   type="text"
   (keyup)="sendCountry(txtInput.value)"
+  [value]="initialValue"
   #txtInput
   [ngClass]="{'dark-class': isComponentDark === 'dark'}"
 >

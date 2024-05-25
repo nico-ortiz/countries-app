@@ -1,6 +1,6 @@
 .country-page-container {
   width: 100vw;
-  max-height: 100%;
+  height: 100vh;
   padding: 100px 150px;
   background-color: hsl(0, 0%, 95%);
 }

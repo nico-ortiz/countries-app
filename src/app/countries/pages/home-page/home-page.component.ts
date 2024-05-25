@@ -9,16 +9,22 @@ import { SharedService } from '../../../shared/services/shared.service';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css'
 })
-export class HomePageComponent {
+export class HomePageComponent implements OnInit {
 
   public countries: Country[] = [];
   public isComponentDark!: string;
+  public initialValue: string = '';
 
   constructor(
     private countriesService: CountriesService,
     private sharedService: SharedService
   ) {
     this.sharedService.mode.subscribe(mode => this.isComponentDark = mode);
+  }
+
+  ngOnInit(): void {
+    this.countries = this.countriesService.cacheStore.byCountries.countries;
+    this.initialValue = this.countriesService.cacheStore.byCountries.term;
   }
 
   searchByCountry(country: string):void {

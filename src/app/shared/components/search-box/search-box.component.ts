@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 import { Subject, Subscription, debounceTime } from 'rxjs';
 
@@ -11,6 +11,9 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
   private debouncer: Subject<string> = new Subject<string>();
   private debouncerSuscription?: Subscription;
+
+  @Input()
+  public initialValue: string = '';
 
   @ViewChild('txtInput')
   txtInput! : ElementRef<HTMLInputElement>;

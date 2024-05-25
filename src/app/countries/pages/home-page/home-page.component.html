@@ -3,7 +3,10 @@
   [ngClass]="{'dark-class': isComponentDark === 'dark'}"
   >
   <div class="search-container">
-    <shared-search-box (onDebounce)="searchByCountry($event)"></shared-search-box>
+    <shared-search-box
+      (onDebounce)="searchByCountry($event)"
+      [initialValue]="initialValue"
+    ></shared-search-box>
     <shared-filter (onRegion)="searchByRegion($event)"></shared-filter>
   </div>
   <countries-card [countries]="countries"></countries-card>
