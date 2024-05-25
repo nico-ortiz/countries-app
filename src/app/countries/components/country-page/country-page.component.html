@@ -1,0 +1,34 @@
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor
+  </div>
+</ng-template>
+
+<div *ngIf="country; else loading" class="country-page-container"
+  [ngClass]="{'dark-class': isComponentDark === 'dark'}">
+  <button
+    class="back-btn nunito-sans-600"
+    [routerLink]="'/search'"
+  >Back</button>
+  <figure class="info-country">
+    <img class="flag-country" [src]="country.flags.svg" [alt]="country.name">
+    <figcaption class="nunito-sans-800">
+        <h1 class="country-name">{{country.name.common}}</h1>
+        <div class="country-details">
+          <div class="first-details">
+            <p>Native Name: <span>{{country.name.official}}</span></p>
+            <p>Population: <span>{{country.population | number}}</span></p>
+            <p>Region: <span>{{country.region}}</span></p>
+            <p>Sub Region: <span>{{country.subregion}}</span></p>
+            <p>Capital: <span>{{country.capital}}</span></p>
+          </div>
+          <div class="second-details">
+            <p>Top Level Domain: <span>{{country.tld}}</span></p>
+            <p>Currencies: <span>{{getCurrencyName(country)}}</span></p>
+            <p>Languages: <span>{{objectKeys(country.languages || {})}}</span></p>
+          </div>
+          <p class="border-countries">Border countries: <span class="border-country" *ngFor="let borderCountry of bordersCountriesList"><a [routerLink]="['/countries/by', borderCountry.cca3]">{{borderCountry.name.common}}</a></span></p>
+        </div>
+    </figcaption>
+  </figure>
+</div>
