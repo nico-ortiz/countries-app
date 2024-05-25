@@ -40,3 +40,17 @@ header > .title {
 .dark-class .moon-dark-theme {
   display: none;
 }
+
+header .dark-theme-container > p {
+  padding-left: 30px;
+  background: url('../../../../assets/images/icons8-do-not-disturb-ios-100light.png') no-repeat 0px ;
+  background-size: 20px;
+  width: 150px;
+}
+
+.dark-class .dark-theme-container > p {
+  background: url('../../../../assets/images/icons8-do-not-disturb-ios-100.png') no-repeat no-repeat 0px ;
+  background-size: 20px;
+}
+
+
