@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
   },
   {
+    path: 'countries-app/',
+    redirectTo: 'countries/search'
+  },
+  {
     path: '**',
     redirectTo: 'countries/search'
   }
